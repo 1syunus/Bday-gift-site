@@ -98,7 +98,7 @@ function updateCart(itemName, itemPrice, quantity) {
 function updateTotalPrice(){
     let totalPrice = 0
     cart.forEach(item => {
-        totalPrice += item.price * item.quantity;
+        totalPrice += item.price * item.quantity
     })
     const formattedTotalPrice = formatPrice(totalPrice)
     document.getElementById("total-price").textContent = formattedTotalPrice
@@ -196,32 +196,32 @@ document.getElementById("expiration").addEventListener("input", function (e) {
 })
 
 function validateExpirationDate(expirationDate) {
-    const [month, year] = expirationDate.split("/");
+    const [month, year] = expirationDate.split("/")
 
     if (!month || !year || expirationDate.length !== 5) {
-        return false; // Invalid format
+        return false // Invalid format
     }
 
-    const currentYear = new Date().getFullYear() % 100;
-    const maxYear = currentYear + 10;
+    const currentYear = new Date().getFullYear() % 100
+    const maxYear = currentYear + 10
 
     if (parseInt(month) < 1 || parseInt(month) > 12) {
-        return false; // Invalid month
+        return false // Invalid month
     }
 
     if (parseInt(year) < currentYear || parseInt(year) > maxYear) {
-        return false; // Invalid year
+        return false // Invalid year
     }
 
-    return true;
+    return true
 }
 
 // Clear input fields function
 function clearPaymentFields() {
-    document.getElementById("card-name").value = "";
-    document.getElementById("card-number").value = "";
-    document.getElementById("expiration").value = "";
-    document.getElementById("cvv").value = "";
+    document.getElementById("card-name").value = ""
+    document.getElementById("card-number").value = ""
+    document.getElementById("expiration").value = ""
+    document.getElementById("cvv").value = ""
     document.getElementById("expiration-error").textContent = ""
 
 // Form submission
@@ -242,12 +242,8 @@ paymentForm.addEventListener("submit", function(e) {
         expirationError.textContent = ""
         e.preventDefault()
         
-//     }
-// })
-
 // Accept payment info
-// document.getElementById("payment-form").addEventListener("submit", function(e){
-//     e.preventDefault()
+
 
     const cardName = document.getElementById("card-name").value
     const cardNumber = document.getElementById("card-number").value
@@ -263,7 +259,7 @@ paymentForm.addEventListener("submit", function(e) {
         alert("Please complete payment information.")
         clearPaymentFields()
     }   
-// })
-}
-    })
+
+    }
+})
 }

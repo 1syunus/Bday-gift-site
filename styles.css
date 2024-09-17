@@ -14,7 +14,6 @@ header {
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
-    /* align-items: center; */
     padding: 20px;
 }
 
@@ -22,7 +21,6 @@ header {
     width: 150px;
     border-radius: 50%;
     border: 6px solid #EFB0C9;
-    /* margin-left: 46px; */
 }
 
 .store-title {
@@ -46,7 +44,6 @@ header {
 
 #username-label {
     margin-bottom: 5px;
-
 }
 
 #username {
@@ -68,7 +65,6 @@ header {
     background-size: cover;
     justify-content: center;
 }
-
 
 .reviews {
     margin: 100px auto 200px auto;
@@ -207,7 +203,6 @@ input, textarea {
     width: 175px;
     border-radius: 6px;
     border: 2px solid #EFB0C9;
-
 }
 
 textarea {
