@@ -13,8 +13,11 @@ h1, h2, h3, h4, p {
 header {
     display: flex;
     justify-content: space-between;
-    flex-direction: row-reverse;
+    align-items: flex-start;
     padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
 }
 
 #header-logo {
@@ -23,6 +26,20 @@ header {
     border: 6px solid #EFB0C9;
 }
 
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
 .store-title {
     font-size: 1em;
     margin: 0;
@@ -30,6 +47,8 @@ header {
 
 #greeting {
     font-size: 2em;
+    max-width: 600px;
+    width: 100%;
 }
 
 
@@ -38,8 +57,6 @@ header {
     flex-direction: column;
     margin-top: 20px;
     align-items: center;
-    padding-left: 20px;
-    margin-right: auto;
 }
 
 #username-label {
@@ -59,11 +76,13 @@ header {
 .gift-img {
     margin: 20px auto;
     max-width: 560px;
+    width: 100%;
     height: 320px;
     border: 6px solid white;
     border-radius: 10px;
     background-size: cover;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .reviews {
@@ -212,4 +231,20 @@ textarea {
 
 ::placeholder {
     color: #aaaaaa;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gifts {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal {
+        width: 90%;
+    }
 }
