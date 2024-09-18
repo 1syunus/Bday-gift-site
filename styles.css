@@ -22,6 +22,7 @@ header {
 
 #header-logo {
     width: 150px;
+    max-width: 100%;
     border-radius: 50%;
     border: 6px solid #EFB0C9;
 }
@@ -29,6 +30,8 @@ header {
 .header-left {
     display: flex;
     align-items: center;
+    flex-shrink: 1;
+    
 }
 
 .header-right {
@@ -37,6 +40,8 @@ header {
     align-items: flex-end;
     text-align: center;
     box-sizing: border-box;
+    flex-shrink: 1; /* allow shrinkage */
+    min-width: 0; /* no overflow */
 }
 
 
@@ -49,6 +54,7 @@ header {
     font-size: 2em;
     max-width: 600px;
     width: 100%;
+    
 }
 
 
@@ -236,15 +242,77 @@ textarea {
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        text-align: center;
+        flex-wrap: nowrap;
+        align-items: end;
+        gap: 10px;
+    }
+
+    .header-left,
+    .header-right {
+        flex-direction: row; /* Keep the left and right headers in a single line */
+        justify-content: space-between;
+        width: 100%; /* Ensure both headers take up the full width */
+        align-items: center;
+    }
+
+    #header-logo {
+        width: 80px;
+        border: 3px solid #EFB0C9;
+    }
+
+    header label {
+        font-size: .75em;
+        margin-top: -10px;
+    }
+
+    .header-right {
+        gap: 1px;
+    }
+
+    .store-title {
+        font-size: .75em; /* Reduce title size */
+        margin-top: -125px;
+        padding-top: 15px;
+    }
+    
+    .username-div {
+        width: 125px;
+    }
+
+    #username {
+        width: 125px;
+        height: 25px;
+    }
+
+
+    #greeting {
+        margin-top: 15px; /* space between headers and greeting */
+        font-size: 1.25em;
+        order: 3; /* header moved below */
+    }
+
+    #start-btn {
+        width: 60px;
+        margin-top: 4px;
+        padding: 6px;
     }
 
     .gifts {
         flex-direction: column;
         align-items: center;
+        padding: 0 25px;
+    }
+
+    .reviews {
+        padding: 25px 0 0;
+        margin: 50px;
     }
 
     .modal {
         width: 90%;
+    }
+
+    ::placeholder {
+        font-size: .75em;
     }
 }
