@@ -152,6 +152,10 @@ header {
     text-align: center;
 }
 
+.error-message {
+    font-size: small;
+    padding-right: 5px;
+}
 
 input, textarea, button {
     font-family: inherit
@@ -235,6 +239,10 @@ textarea {
     height: 100px;
 }
 
+#expiration-error {
+    color: red;
+}
+
 ::placeholder {
     color: #aaaaaa;
 }
@@ -310,6 +318,7 @@ textarea {
 
     .modal {
         width: 90%;
+        padding: 30px;  
     }
 
     ::placeholder {
